@@ -35,7 +35,7 @@ export default function Calculator() {
         <SubHeader />
         <DisplayPanel calc={calc} />
         <OptionPanel />
-        <CellsPanel />
+        <CellsPanel calc={calc} setCalc={setCalc} />
       </div>
       <div className="col-span-3"></div>
     </div>

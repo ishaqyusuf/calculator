@@ -1,4 +1,5 @@
 import { ICalc } from "@/app/page";
+import { formatNumber } from "@/utils/number-format";
 
 interface Props {
   calc: ICalc;
@@ -10,7 +11,11 @@ export default function DisplayPanel({ calc }: Props) {
         {/* <span>128</span>
         <span className="">x</span> */}
       </div>
-      <div className="text-5xl font-bold">{calc.value}</div>
+      <div className="text-5xl font-bold">
+        {calc.operator && !calc.value
+          ? formatNumber(calc.operand)
+          : formatNumber(calc.value) || "0"}
+      </div>
     </div>
   );
 }
